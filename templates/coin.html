@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/coin.css' %}">
+    <title>Document</title>
+
+</head>
+<body>
+    <div class="nav">
+        <a href="/">TNTrade</a>
+        <div class="navbar">
+            <a href="{% url 'profile' %}">Profile</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        </div>
+    </div>
+
+    <div class="header">
+        <img class="coin-image" src="/static/images/{{code}}.svg" alt="">
+        <h1>{{symbol}}</h1>
+    </div>
+    
+    <h2>{{code}}</h2>
+    <h3>USD {{price}}</h3>
+
+
+    <a class="purchase-button" href="{% url 'purchase' %}">Purchase the Coin Here!</a>
+</body>
+</html>

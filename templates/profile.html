@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/profile.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav">
+        <a href="/">TNTrade</a>
+        <div class="navbar">
+            <a href="{% url 'profile' %}">Profile</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        </div>
+    </div>
+    <h1>Welcome {{ user.username }}!</h1>
+    <h2>Your Wallet:</h2>
+    <div class="wallet">
+        <img class="wallet-img" src="/static/images/wallet.svg" alt="">
+        <p>USD {{money}}</p>
+    </div>
+    <div class="table">    
+        
+        <div class="coin_name">
+            <p class="coin-head bold">COIN</p>
+            {% for coin in investment_list%}
+                <p class="coin-name">{{coin}}</p>
+            {% endfor %}
+        </div>
+        
+        <div class="coin_amount">
+            <p class="amount-head bold">COIN AMOUNT</p>
+            {% for amount in investment_amount%}
+                <p>{{amount}}</p>
+            {% endfor %}
+        </div>
+
+        <div class="return_percentage">
+            <p class="return-head bold">RETURN</p>
+            {% for return in return_list%}
+                <p>{{return}}%</p>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <div class="buttons">
+        <a class="sell-button" href="{% url 'sell' %}">Sell</a>
+        <a class="purchase-button" href="{% url 'purchase' %}">Buy</a>
+    </div>
+
+
+</body>
+</html>

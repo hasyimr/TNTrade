@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <title>Document</title>
+
+</head>
+<body>
+    <div class="hero">
+        {% if user.is_authenticated %}
+        <div class="nav">
+            <a href="/">TNTrade</a>
+            <div class="navbar">
+                <a href="{% url 'profile' %}">Profile</a>
+                <a href="{% url 'logout' %}">Logout</a>
+            </div>
+        </div>
+        <div class="alert alert-success" role="alert">
+            <h1>Welcome {{ user.username }}!</h1>
+            <h2>Your Wallet:</h2>
+            <div class="wallet">
+                <img class="wallet-img" src="/static/images/wallet.svg" alt="">
+                <p>USD {{money}}</p>
+            </div>
+            
+        </div>
+    {% else %}
+        <div class="nav">
+            <a href="/">TNTrade</a>
+            <div class="navbar">
+                <a href="{% url 'login' %}">Login</a>
+        </div>
+        </div>
+            <h1>Welcome!</h1>
+            <a class="cta-trading" href="{% url 'login' %}"><h2>Mulai Trading!</h2></a>
+
+    {% endif %}
+        
+
+        <h3>Coins Available to Buy</h3>
+        <div class="coins-container">
+            {% for coin in crypto %}
+            <a class="coins" href="coin/{{coin}}">
+                <div >
+                    <img class="coin-image" src="/static/images/{{coin}}.svg" alt="">
+                    <p>{{coin}}</p>
+                </div>
+            </a>
+    
+            
+            {% endfor %}
+        </div>
+
+        
+    </div>
+
+
+
+</body>
+</html>

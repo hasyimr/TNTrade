@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin-inline: .3em;
+    text-align: center;
+    text-decoration: none;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 1em;
+}
+
+.table {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    padding: 1em;
+    margin-bottom: 2em;
+}
+
+.wallet {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    margin-inline: 2em;
+    padding-inline: 1.4em;
+    border-radius: 20px;
+    margin-bottom: 2em;
+}
+
+.wallet-img {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.coin-name {
+    text-align: left;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.sell-button {
+    text-decoration: none;
+    margin-top: 2em;
+    background-color: rgb(253, 100, 151);
+    color: white;
+    border: none;
+    padding: 2em;
+    padding-block: .5em;
+    border-radius: 20px;
+}
+
+.purchase-button {
+    text-decoration: none;
+    margin-top: 2em;
+    background-color: rgb(100, 171, 253);
+    color: white;
+    border: none;
+    padding: 2em;
+    padding-block: .5em;
+    border-radius: 20px;
+}
+
