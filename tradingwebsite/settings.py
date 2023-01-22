@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['tn-trade-git-hasyimr90-dev.apps.sandbox.x8i5.p1.openshiftapps.com']
+ALLOWED_HOSTS = ['tntrade-git-crypto-hasyimr90-dev.apps.sandbox.x8i5.p1.openshiftapps.com']
 
 
 # Application definition
