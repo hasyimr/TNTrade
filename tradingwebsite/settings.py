@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://tntrade-hasyimr90-dev.apps.sandbox.x8i5.p1.openshiftapps.com/']
+ALLOWED_HOSTS = ['tntrade-git-crypto-hasyimr90-dev.apps.sandbox.x8i5.p1.openshiftapps.com']
 
 
 # Application definition
@@ -89,7 +89,6 @@ DATABASES = {
         'NAME': os.environ.get('DB_NAME'),
         'USER': os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
 
     }
 }
@@ -139,5 +138,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
-
-django_heroku.settings(locals)
